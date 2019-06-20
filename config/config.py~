@@ -1,0 +1,30 @@
+# -*- coding: utf-8 -*-
+def get_config():
+    return Config()
+
+class Config(object):
+    def __init__(self):
+        self.model_name = 'May07'
+        self.is_training = True
+        self.step_num = 1000000
+        self.batch_size = 1500
+        self.dropout = 0.8
+        self.gpu = "1"
+        self.learning_rate = 0.001
+        self.momentum = 0.9
+        self.conv_weight_decay = 0.00001
+        self.lstm_units = 200
+        self.lr_decay = 0.9
+        self.decay_step = 12000
+        self.max_grad_norm = -1
+        self.seq_length = 30*20
+        self.feature_length = 40
+        self.per_process_gpu_memory_fraction = 'change'
+        self.drop_list = ['TTIME','TDATE' ]
+        self.normalize_list = ['OP', 'CP', 'LOP', 'HIP', 'B1', 'B2', 'B3', 'B4', 'B5', 'S1', 'S2', 'S3', 'S4', 'S5']
+        self.use_placeholder = False
+        self.shuffle_num = 123
+        self.num_step_to_show_cost = 236452/self.batch_size*10
+        self.train_path = '/media/data1/wangjc/stock_prediciton/data/tfrecord/train.tfrecords'
+        self.valid_path = '/media/data1/wangjc/stock_prediciton/data/tfrecord/valid.tfrecords'
+        self.test_path = '/media/data1/wangjc/stock_prediciton/data/tfrecord/test.tfrecords'
